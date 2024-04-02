@@ -56,6 +56,13 @@ pipeline {
                """
             }
         }
+        stage('Build') {
+            steps {
+                sh """
+                    ls -la
+                """
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing..'
