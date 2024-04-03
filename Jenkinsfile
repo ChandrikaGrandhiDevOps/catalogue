@@ -87,9 +87,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh """
-                    echo 'Here i wrote shell script'
-                """
+                build job: "catalogue-dep", wait: true, parameters:[
+                    string(name: 'version', defaultValue: ${defaultValue}, description: 'artifact version')
+                    booleanParam(name: 'environment', defaultValue: 'dev', description: 'environment')
+                ]
             }
         }
     }
