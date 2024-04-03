@@ -92,9 +92,8 @@ pipeline {
                             string(name: 'version', value: "${packageVersion}"),
                             string(name: 'environment', value: "dev")
                         ]
-                        build job: "catalogue-dep", wait: true, parameters:
-
-                    }
+                        build job: "catalogue-dep", wait: true, parameters: params
+                }
             }
         }
     //post build
