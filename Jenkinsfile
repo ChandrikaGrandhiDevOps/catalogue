@@ -88,8 +88,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 build job: "catalogue-dep", wait: true, parameters:[
-                    string(name: 'version', defaultValue: ${defaultValue}, description: 'artifact version')
-                    booleanParam(name: 'environment', defaultValue: 'dev', description: 'environment')
+                    string(name: 'version', value: "${defaultValue}")
+                    string(name: 'environment', value: 'dev')
                 ]
             }
         }
