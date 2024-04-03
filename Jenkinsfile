@@ -89,7 +89,7 @@ pipeline {
             steps {
                 build job: "catalogue-dep", wait: true, parameters:[
                     string(name: 'version', value: "${defaultValue}")
-                    string(name: 'environment', value: 'dev')
+                    booleanParam(name: 'environment', value: 'dev')
                 ]
             }
         }
