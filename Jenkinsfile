@@ -90,7 +90,7 @@ pipeline {
                 script {
                         def params = [
                             string(name: 'version', value: "${packageVersion}"),
-                            string(name: 'environment', value: 'dev')
+                            string(name: 'environment', value: "dev")
                         ]
                         build job: "catalogue-dep", wait: true, parameters:
                    }   
