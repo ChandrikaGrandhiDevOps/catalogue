@@ -93,10 +93,10 @@ pipeline {
                             string(name: 'environment', value: "dev")
                         ]
                         build job: "catalogue-dep", wait: true, parameters:
-                   }   
+
+                    }
             }
         }
-    }
     //post build
     post {
         always {
